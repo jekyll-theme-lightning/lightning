@@ -1,0 +1,38 @@
+div, section, article, p,
+h1, h2, h3, h4, h5, h6, li {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin-bottom: 1.4em;
+}
+
+h2, h3, h4 {
+  margin-bottom: 1em;
+}
+
+h3::before {
+  content: "-";
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  line-height: 1.8rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  li {
+    list-style: none;
+  }
+}

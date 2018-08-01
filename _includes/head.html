@@ -1,0 +1,29 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site.title }}</title>
+
+  {% if page.og %}
+  <meta property="og:title" content="{{ page.og.title }}">
+  <meta property="og:image" content="{{ page.og.image | absolute_url }}">
+  <meta property="og:description" content="{{ page.og.description }}">
+  <meta name="twitter:card" content="{{ page.og.card }}">
+  {% else %}
+    {% if page.image and page.caption %}
+      <meta property="og:title" content="{{ page.title }}">
+      <meta property="og:image" content="{{ page.image | absolute_url }}">
+      <meta property="og:description" content="{{ page.caption }}">
+      <meta name="twitter:card" content="summary_large_image">
+    {% else %}
+      <meta property="og:title" content="{{ page.title }}">
+      <meta property="og:description" content="{{ content | strip_newlines | strip_html | strip | truncate: 240 }}">
+      <meta name="twitter:card" content="summary">
+    {% endif %}
+  {% endif %}
+
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+
+  <link rel="stylesheet" type="text/css" href="{{ '/assets/lib/normalize/normalize.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/custom.css' | relative_url }}">
+</head>

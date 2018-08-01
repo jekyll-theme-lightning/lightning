@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<article class="post-wrapper text-wrapper">
+  <header>
+    <h1>{{ page.title }}</h1>
+  </header>
+  <section class="post-content text-content">
+    {% if page.image %}
+      <section class="post-image">
+        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+      </section>
+    {% endif %}
+    {{ content }}
+  </section>
+  <aside>
+    <p><a href="javascript:history.go(-1)">&lt; Back</a></p>
+  </aside>
+</article>

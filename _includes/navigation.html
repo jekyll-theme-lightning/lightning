@@ -1,0 +1,28 @@
+<section class="navigation">
+  <nav>
+    {% if site.data.navigation.items.size > 0 %}
+      <ul class="nav-main {% if site.data.settings.navigation.uppercase %}nav-uppercase{% endif %}">
+        {% for item in site.data.navigation.items %}
+          {% assign currentNavItemTitle = page.navItemTitle | downcase %}
+          {% assign targetNaveItemTitle = item.title | downcase %}
+          <li {% if currentNavItemTitle == targetNaveItemTitle %}class="active"{% endif %}>
+            <a href="{{ item.url | prepend:site.baseurl }}">{{ item.title }}</a>
+            {% if item.subitems.size > 0 %}
+              <ul class="nav-sub">
+                {% for sitem in item.subitems %}
+                <li><a href="{{ sitem.url | prepend:site.baseurl }}">{{ sitem.title }}</a></li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+            </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <ul>
+        <li>
+          <p>NOTICE: There're no items. You can add them on <code>_data/navigation</code>.</p>
+        </li>
+      </ul>
+    {% endif %}
+  </nav>
+</section>

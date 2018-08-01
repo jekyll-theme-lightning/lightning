@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<article class="posts-wrapper artworks-wrapper">
+  <header>
+    <h1>{{ page.title }}</h1>
+  </header>
+  <section class="posts-content artworks-content">
+    {% assign sorted_posts = site.posts
+      | where:"categories", page.item
+      | sort:"order"
+      | reverse %}
+    {% if sorted_posts.size > 0 %}
+      <ul class="posts-list artworks-list">
+        {% for post in sorted_posts %}
+          <li>
+            <a href="{{ post.url | relative_url }}">
+              <div class="thumb-image" style="background-image: url('{{ post.thumb | relative_url }}')">{{ post.title }}</div>
+            </a>
+            <a href="{{ post.url | relative_url }}" class="caption">{{ post.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>There's no post in "{{ page.item }}" yet.</p>
+    {% endif %}
+  </section>
+</article>

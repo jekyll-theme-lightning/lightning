@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="{% if site.data.settings.locale %}{{ site.data.settings.locale }}{% else %}ko{% endif %}">
+{% include head.html %}
+<body>
+  <div class="global-wrapper">
+    <header class="site-header">
+      <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+      {% if site.description %}
+        <p class="tagline">{{ site.description }}</p>
+      {% endif %}
+      {% include navigation.html %}
+    </header>
+    <section class="site-content {% if page.class %}{{ page.class }}{% endif %}">
+      {{ content }}
+    </section>
+    {% include footer.html %}
+  </div>
+  <script type="text/javascript" src="{{ '/assets/custom.js' | relative_url }}"></script>
+</body>
+</html>

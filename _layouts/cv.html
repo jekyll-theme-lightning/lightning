@@ -1,0 +1,28 @@
+---
+layout: page
+---
+
+<article class="about-wrapper">
+  <section class="about-info">
+    {% if site.data.author.description %}
+      <p>{{ site.data.author.description }}</p>
+    {% endif %}
+    {% if site.data.author.email %}
+      <p><a href="mailto:{{ site.data.author.email }}">{{ site.data.author.email }}</a></p>
+    {% endif %}
+    {{ content }}
+  </section>
+  {% if site.data.author.exhibitions %}
+    <section class="about-exhibitions">
+      <h2>Exhibitions</h2>
+      {% for exgroup in site.data.author.exhibitions %}
+        <h3>{{ exgroup.title }}</h3>
+        <ul>
+          {% for exitem in exgroup.list %}
+            <li>{{ exitem }}</li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+    </section>
+  {% endif %}
+</article>

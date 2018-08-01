@@ -1,0 +1,11 @@
+<footer class="site-footer">
+  <p class="copyright">
+    {% if site.data.settings.footer.copyright %}
+      {{ site.data.settings.footer.copyright }}
+    {% else %}
+      &copy; {{ site.data.author.copyright_year }}.
+      <a href="mailto:{{ site.data.author.email }}">{{ site.data.author.name }}</a>
+      ALL RIGHTS RESERVED.
+    {% endif %}
+  </p>
+</footer>

@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+$baseFontSize: 0.83rem;
+$baseFontColor: #333333;
+$dimFontColor: #555555;
+$metaFontColor: dimgray;
+
+// Import webfont
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+// Import partials
+@import "jekyll-theme-lightning/base";
+@import "jekyll-theme-lightning/fonts";
+@import "jekyll-theme-lightning/layout";

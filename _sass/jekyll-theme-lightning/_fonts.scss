@@ -1,0 +1,20 @@
+html {
+  font-size: $baseFontSize;
+}
+
+h1, h2, h3, h4 {
+  font-size: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6,
+p, span, pre, a, blockquote {
+  font-family: 'Noto Sans KR', 'Nanum Barun Gothic', 'Nanum Gothic', 'Malgun Gothic', 'Dotum', sans-serif;
+}
+
+h1, p, span, pre, a, blockquote {
+  color: $baseFontColor;
+}
+
+h2, h3, h4, h5, h6 {
+  color: $dimFontColor;
+}
